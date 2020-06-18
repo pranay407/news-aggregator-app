@@ -1,4 +1,4 @@
-const APIKey= "40679c4975fd4e019400e887c84f0b4d";
+/*const APIKey= "40679c4975fd4e019400e887c84f0b4d";
 
 
 var news_area=document.getElementById("news-articles");
@@ -78,6 +78,7 @@ async function searchvalue(e){
      // Console.log("keypress");
      }
 };*/
+
 
 
 const apikey="ae14e697b60f439a8e5945ac437fa2ae";
