@@ -1,4 +1,4 @@
-@import "./reset.css";
+/* @import "./reset.css";
 
 body {
   background: #0f0f0f;
@@ -58,13 +58,13 @@ body {
     border-top: black;
     border-left: black;
     border-right: black;
-}
+} */
 
 /*ul {
   list-style-type: none;
 }*/
 
-#news-articles {
+/* #news-articles {
    margin-left: 20px;    
         display: flex;
         flex-wrap: wrap;  
@@ -89,14 +89,14 @@ li {
   
    list-style-type: none;
 }
-        
+         */
 
 /*li:hover {
   -webkit-box-shadow: 2px 3px 8px 0px;
           box-shadow: 2px 3px 8px 0px;
 }*/
 
-.article {
+/* .article {
    
       display: inline;
 }
@@ -457,4 +457,4 @@ li {
     -webkit-transform: scale(0);
             transform: scale(0);
   }
-}
+} */
