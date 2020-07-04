@@ -1,8 +1,8 @@
 body{
     background-color: var(--background-body-color);
-  }
+}
   /* CSS FOR HEADER AREA */
-  .mainheading{
+.mainheading{
     color:var(--font-color);
     font-size: 31px;
     font-family: 'Trebuchet MS';
@@ -12,25 +12,25 @@ body{
     padding-left: 23px;
     padding-right: 23px;
     display: inline-block;
-    }
-    .toggletxt{
+}
+.toggletxt{
         color:var(--font-color);
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         margin-left: 16%;
         display: inline-block;
-    }
+}
   #toggle_action{
     display: none;
-  }
+}
   /* CSS FOR ROUNDED SLIDE BARS */
-  .switch {
+.switch {
       margin-top: 25px;
       position: relative;
       display: inline-block;
       width: 60px;
       height: 34px;
-    }
-    .slider {
+}
+.slider {
       position: absolute;
       cursor: pointer;
       top: 0;
@@ -41,7 +41,7 @@ body{
       -webkit-transition: .4s;
       transition: .4s;
     }
-    .slider:before {
+.slider:before {
       position: absolute;
       content: "";
       height: 26px;
@@ -51,34 +51,32 @@ body{
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s;
-    }
-    input:checked + .slider {
+}
+input:checked + .slider {
       background-color: rgba(39, 35, 35, 0.986);
-    }
-   input:focus + .slider {
+}
+input:focus + .slider {
       box-shadow: 0 0 1px ;
     }
-    input:checked + .slider:before {
+input:checked + .slider:before {
       -webkit-transform: translateX(26px);
       -ms-transform: translateX(26px);
       transform: translateX(26px);
-    }
+}
     /* Rounded sliders */
-    .slider.round {
+.slider.round {
       border-radius: 34px;
-    }
-    .slider.round:before {
+}
+.slider.round:before {
       border-radius: 50%;
-    }
+}
     /* CSS FOR SEARCH BAR */
-    .search-container{
+.search-container{
         margin-top: 4%;
         margin-left: 5%;
-        margin-bottom: 70px;
-        
-        
-    }
-    #search{
+        margin-bottom: 70px;   
+}
+#search{
         width: 92%;
         height: 30px;
         background-color:var(--background-body-color);
@@ -90,14 +88,14 @@ body{
         border-left: black;
         border-right: black;
         
-    }
+}
     /* CSSS FOR NEW AREA */
-    #news-articles{
+#news-articles{
       margin-left: 20px;    
       display: flex;
       flex-wrap: wrap;  
-    }
-    .container{
+}
+.container{
       max-width: 265px;
       border: black 10px solid;
       height:530px;
@@ -107,28 +105,28 @@ body{
       margin-bottom: 20px;
       border-radius: 18px;
       padding-right: 30px;
-    }
-    .article{
+}
+.article{
       list-style-type: none;
       display: inline;
-   }
-   .container:hover{
+}
+.container:hover{
     transform: scale(1.03);
     box-shadow: 0 0 5px var(--box-shadow);
     transition: all 0.3s;
-   }
+}
   
-    .img_area{
+.img_area{
       width:265px;
       height:250px;
       background-color:var(--img-background);
-    }
-    .article-img{
+}
+.article-img{
       margin-top: 20px;
       width:265px;
       height:205px;
-    }
-   .article-title{
+}
+.article-title{
       background: none;
       font-family: sans-serif;
       overflow: hidden;
@@ -136,7 +134,7 @@ body{
       display: -webkit-box;
       -webkit-line-clamp: 3; 
       -webkit-box-orient: vertical;
-    }
+}
     .article-description{
       font-size: 25px;
       color:var(--font-color);
