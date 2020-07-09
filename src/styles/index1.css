@@ -62,7 +62,7 @@ ul {
 }
 
 #news-articles {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,7 +239,7 @@ li:hover {
     list-style-type: none;
   }
   #news-articles {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
