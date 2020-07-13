@@ -1,8 +1,5 @@
-/* @import "./reset.css";
-
 body {
   background: #0f0f0f;
-  color:sans-serif;
 }
 
 .main-head {
@@ -48,128 +45,116 @@ body {
 }
 
 #search {
- width: 92%;
-    height: 30px;
-    background-color: black;
-    font-size: large;
-    padding: 20px;
-    font-size: 30px;
-    color: white;
-    border-top: black;
-    border-left: black;
-    border-right: black;
-} */
+  width: 92%;
+  height: 30px;
+  background-color: black;
+  font-size: large;
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+  border-top: black;
+  border-left: black;
+  border-right: black;
+}
 
-/*ul {
+ul {
   list-style-type: none;
-}*/
+}
 
-/* #news-articles {
-   margin-left: 20px;    
-        display: flex;
-        flex-wrap: wrap;  
+#news-articles {
+  font-family: 'Times New Roman', Times, serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container {
-   max-width: 171px;
-    border: black 10px solid;
-    height: 437px;
-    padding: 35px;
-    margin-left: 2px;
-    background-color: rgba(39, 35, 35, 0.986);
-    color:white
-    margin-bottom: 21px;
-    border-radius: 18px;
-    text-overflow: ellipsis;
-    color:sans-serif;
-    overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+  width: 23%;
+  border: 5px solid #3b3b3b;
+  margin-bottom: 20px;
 }
 
 li {
-  
-   list-style-type: none;
+  list-style-type: none;
 }
-         */
 
-/*li:hover {
+li:hover {
   -webkit-box-shadow: 2px 3px 8px 0px;
           box-shadow: 2px 3px 8px 0px;
-}*/
-
-/* .article {
-   
-      display: inline;
 }
-       
+
+.article {
+  width: 100%;
+  margin: 1px;
+  padding: 10px;
+  background: #292626;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .article:hover {
-  transform: scale(1.03);
-      box-shadow: 0 0 5px;
-      box-shadow: white;
-      transition: all 0.3s;
+  border: 1px solid blue;
 }
 
 .article-img {
-   width:  185px;
-        height:184px;
-        background-color:black;
-        margin-top: 2px;
-        margin-left: -7;
+  width: 100%;
+  height: 200px;
 }
 
 .article-title {
-   background: none;
-        font-family: sans-serif;
-        color:white;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3; 
-        -webkit-box-orient: vertical;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  text-align: justify;
+  color: white;
+  font-size: 15px;
 }
 
 .article-description {
-    font-size: 19px;
-        font-family:sans-serif;
-        color:white;
-        background: none;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3; 
-        -webkit-box-orient: vertical;
-        font-family: sans-serif;
+  font-size: 13px;
+  color: #aca9a9;
+  text-align: justify;
+  color: #c7c1c1;
 }
 
 .article-author {
-  background: none;
-        font-size: 25px;
-        font-family: sans-serif;
-        color:rgba(43, 173, 216);
-        display: block;
-        text-align: right;
-        overflow: hidden;
-    text-overflow: ellipsis;
+  color: blue;
+  width: 100%;
+  text-align: right;
+  position: relative;
+  bottom: 0px;
+  font-size: 13px;
+  margin-right: 0%;
 }
 
 .article-link {
- color:white;
-        text-decoration: none;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  text-align: justify;
+  font-weight: normal;
 }
 
 .not-found {
-  color:white;
-        font-family: sans-serif;
-        font-size: 35px;
-        margin-left: 25px;
-        list-style-type: none;
+  color: white;
+}
 
 .load {
-   color:white;
-       font-family: sans-serif;
-       font-size: 35px;
-       margin-left: 25px;
+  color: white;
 }
 
 .load svg {
@@ -277,8 +262,6 @@ li {
     border: 5px solid #3b3b3b;
     margin-bottom: 20px;
   }
-
-
   .article {
     width: 100%;
     margin: 1px;
@@ -287,12 +270,9 @@ li {
     border: 1px solid black;
     border-radius: 5px;
   }
-  .container:hover{
-      transform: scale(1.03);
-      box-shadow: 0 0 5px;
-      box-shadow: white;
-      transition: all 0.3s;
-     }
+  .article:hover {
+    border: 1px solid blue;
+  }
   .article-img {
     width: 100%;
     height: 200px;
@@ -457,4 +437,5 @@ li {
     -webkit-transform: scale(0);
             transform: scale(0);
   }
-} */
+}
+/*# sourceMappingURL=index.css.map */
