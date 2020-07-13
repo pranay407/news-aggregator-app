@@ -1,115 +1,107 @@
-require('../styles/index1.css')
+const apikey="336ba9abbcd34e049cba1ac37e785a53";
+const article_area=document.getElementById("news-articles");
+let output="";
+function getNews(news)
+{let output="";
+    try{
+   console.log(news.totalResults);
+    if( news.totalResults > 0 )
+    { 
 
-const apikey = '336ba9abbcd34e049cba1ac37e785a53';
+    news.articles.forEach(ind=>{
+     output+=
+    ` <section class="container">
+        <li class="article">
+               
+            <div>
+            <img src="${ind.urlToImage}" class="article-img" alt="${ind.title}"></img>
+            </div>
+            <h2 class="article-title">${ind.title}</h2>
+            <p class="article-description">${ind.description || "Description not available."}</p><br>
+            <span class="article-author">${ind.author? ind.author: "unknown"}</span><br>
+            <a class="article-link" href="${ind.url}" target="_blank">
+            </a>
+        </li>
+    </section> 
+    `;
+});
 
-function getNews() {
+article_area.innerHTML=output;
 
-    const url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=' + apikey;
-    fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
+    
 
-            const length = data.articles.length;
-            let output = '';
+}
+else{
 
+    article_area.innerHTML=`<h3 class="not-found">No article was found based on the search.</h3>`;
+}
+    }//try enddd
 
-            for (let i = 0; i < length; i++) {
-
-                let obj = data.articles;
-
-                let titles = obj[i].title;
-                let authors = obj[i].author;
-                let descriptions = obj[i].description;
-                let urls = obj[i].url;
-                let image = obj[i].urlToImage;
-
-             
-                output +='<li class="article">'+
-                    '<div class="card p-1" style="width: 15rem;display:none"><img src="'+image+'" class="article-img" alt="..."></div> '+ 
-                    '<div class="card p-1" style="width: 15rem;"><img src="'+image+'" class="card-img-top article-img" alt="..."> '+
-                    
-                    '<div class="card-body">'+
-                    '<h2 class="article-title">'+titles.substring(0,70)+'</h2>'+
-                    '<p class="article-description">'+descriptions.substring(0,100)+'</p>'+
-                    '<span class="article-author">'+authors+'</span><br>'+
-                    '<a href="'+urls+'" class="article-link">know more</a>' +
-                    '</div></div></li> ';
-
-                document.getElementById('news-articles').innerHTML = output;
-            }
-
-        })
+    
+catch(error){
+    alert(error);
+    console.log(error);
+    }
 }
 
-getNews();
-
-
-
-function searchNews() {
-
-    let query = document.getElementById('search').value;
-
+async function reterieve(searchValueText="")
+{
+    try{
+    article_area.innerHTML='<p class="load">News are  loading...</p>';
     
-
-   
-    const url = 'https://newsapi.org/v2/everything?q=' + query + '&apiKey=' + apikey;
-    
-    fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-
-
-        const length = data.articles.length;
-        const results = data.totalResults;
-        let output = '';
-
-
-        if(results != 0)
+    if(searchValueText!="")
     {
-
-        for(let i=0; i<length; i++){
-
-            let obj = data.articles;
-
-
-            let titles = obj[i].title;
-            let authors = obj[i].author;
-            let descriptions = obj[i].description;
-            let urls = obj[i].url;
-            let image = obj[i].urlToImage;
-
-            output +='<li class="article">'+
-                    '<div class="card p-1" style="width: 15rem;display:none"><img src="'+image+'" class="article-img" alt="..."></div> '+ //patch005
-                    '<div class="card p-2" style="width: 17rem;"><img src="'+image+'" class="card-img-top article-img" alt="..."> '+
-                    
-                    '<div class="card-body">'+
-                    '<h2 class="article-title">'+titles.substring(0,70)+'</h2>'+
-                    '<p class="article-description">'+descriptions.substring(0,100)+'</p>'+
-                    '<span class="article-author">'+authors+'</span><br>'+
-                    '<a href="'+urls+'" class="article-link">know more</a>'
-                    '</div></div></li> ';
-
-                    document.getElementById('news-articles').innerHTML = output;
-
-        }
+        url=`https://newsapi.org/v2/everything?q=${searchValueText}&apikey=${apikey}`;
     }
-    else 
+    else{
+        url=`https://newsapi.org/v2/top-headlines?country=in&apikey=${apikey}`;
+    }
+    const responce = await fetch(url);
+    //console.log(url);
+    const result = await responce.json();
+
+    getNews(result);
+    //console.log(result);
+}
+catch(error){
+    alert(error);
+    console.log(error);
+    
+}
+};
+
+
+//for passing value to retrive function
+
+async function searchvalue(event){
+
+    if(event.which===13 || event.keycode===13 ||  event.key==="Enter")
     {
+        console.log(event);
+        console.log(event.which);
+        console.log(event.key);
+        console.log(event.keycode);
+        console.log(event.target.value);
+
+        reterieve(event.target.value);
+
+
         
-        document.getElementById('news-articles').innerHTML = '';
-
-        document.getElementById('notfound').innerHTML = 'No article was found based on the search.';
     }
+};
 
-    })
+
+//let article=document.getElementById("news-articles");
+
+
+function start()
+{
+    console.log("onload")//comment to onload start function
+    document.getElementById("search").addEventListener('keypress',searchvalue);
+    reterieve();
+
 }
 
-document.getElementById('search').addEventListener('keypress', function (e) {
-    if (e.keyCode === 13) {
-
-        let query = document.getElementById('search').value;
-
-        query=='' ? getNews() : searchNews();
-
-    }
-}, false);
+(function(){
+    start();
+  })();
