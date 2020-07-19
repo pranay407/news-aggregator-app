@@ -96,7 +96,7 @@ async function searchvalue(event){
 
 function start()
 {
-    console.log("onload")//comment to onload start function
+    console.log("onload");//comment to onload start function
     document.getElementById("search").addEventListener('keypress',searchvalue);
     reterieve();
 
